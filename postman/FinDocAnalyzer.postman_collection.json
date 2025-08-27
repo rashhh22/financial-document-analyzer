@@ -1,0 +1,98 @@
+{
+  "info": {
+    "name": "FinDocAnalyzer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Analyze",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "data/sample.pdf"
+            },
+            {
+              "key": "query",
+              "type": "text",
+              "value": "Extract revenue, net income, risks"
+            },
+            {
+              "key": "user_email",
+              "type": "text",
+              "value": "demo@example.com"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/analyze",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "analyze"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Job",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/jobs/{{job_id}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "jobs",
+            "{{job_id}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Analysis",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/analyses/{{analysis_id}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "analyses",
+            "{{analysis_id}}"
+          ]
+        }
+      }
+    }
+  ]
+}
